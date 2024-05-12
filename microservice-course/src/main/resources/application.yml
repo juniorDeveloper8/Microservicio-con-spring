@@ -1,0 +1,21 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: msvc-course
+  ddata:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: courseDB
+      username: root
+      password: 123456
+  config: # configuracion provicional
+    import: optional:configserver:http://localhost:8888
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
