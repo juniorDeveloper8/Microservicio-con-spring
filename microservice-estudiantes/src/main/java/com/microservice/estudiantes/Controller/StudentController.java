@@ -29,4 +29,10 @@ public class StudentController {
         return ResponseEntity.ok(studentService.findById(id));
     }
 
+    // endpoint para q el microservicios pueda consumirlo
+    @GetMapping("/search-by-course/{idCourse}")
+    public ResponseEntity<?> findByIdCourse(@PathVariable Integer idCourse){
+        return ResponseEntity.ok(studentService.findByIdCourse(idCourse));
+    }
+
 }
