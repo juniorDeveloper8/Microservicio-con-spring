@@ -11,28 +11,28 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/student")
 public class StudentController {
 
-    @Autowired
-    private IStudentService studentService;
+    @Autowired(required = true)
+    private IStudentService iStudentService;
 
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
     public void saveStudent (@RequestBody Student student) {
-        studentService.save(student);
+        iStudentService.save(student);
     }
 
     public ResponseEntity<?> findAllStudent() {
-        return ResponseEntity.ok(studentService.findAll());
+        return ResponseEntity.ok(iStudentService.findAll());
     }
 
     @GetMapping("/search/{id}")
     public ResponseEntity<?> findById(@PathVariable Integer id) {
-        return ResponseEntity.ok(studentService.findById(id));
+        return ResponseEntity.ok(iStudentService.findById(id));
     }
 
     // endpoint para q el microservicios pueda consumirlo
     @GetMapping("/search-by-course/{idCourse}")
     public ResponseEntity<?> findByIdCourse(@PathVariable Integer idCourse){
-        return ResponseEntity.ok(studentService.findByIdCourse(idCourse));
+        return ResponseEntity.ok(iStudentService.findByIdCourse(idCourse));
     }
 
 }
