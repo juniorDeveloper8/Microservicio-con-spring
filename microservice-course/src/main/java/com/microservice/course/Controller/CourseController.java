@@ -12,22 +12,22 @@ import org.springframework.web.bind.annotation.*;
 public class CourseController {
 
     @Autowired
-    private ICurseService curseService;
+    private ICurseService iCurseService;
 
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
-    public void saveStudent(@RequestBody Course course) {curseService.save(course);}
+    public void saveStudent(@RequestBody Course course) {iCurseService.save(course);}
 
     @GetMapping("/all")
     public ResponseEntity<?> findAllCourse(){
-        return ResponseEntity.ok(curseService.findAll());
+        return ResponseEntity.ok(iCurseService.findAll());
     }
 
     @GetMapping("/search/{id}")
-    public ResponseEntity<?> findById(@PathVariable Integer id){ return ResponseEntity.ok(curseService.findById(id));}
+    public ResponseEntity<?> findById(@PathVariable Integer id){ return ResponseEntity.ok(iCurseService.findById(id));}
 
 @GetMapping("/search-student/{idCourse}")
     public ResponseEntity<?> findStudentsByIdCourse(@PathVariable Integer idCourse) {
-        return ResponseEntity.ok(curseService.findStudentsByIdCourse(idCourse));
+        return ResponseEntity.ok(iCurseService.findStudentsByIdCourse(idCourse));
     }
 }
