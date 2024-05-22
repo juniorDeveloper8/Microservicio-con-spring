@@ -19,7 +19,7 @@ public class StudentController {
     public void saveStudent (@RequestBody Student student) {
         iStudentService.save(student);
     }
-
+    @GetMapping("/all")
     public ResponseEntity<?> findAllStudent() {
         return ResponseEntity.ok(iStudentService.findAll());
     }

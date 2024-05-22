@@ -6,7 +6,7 @@ spring:
     name: msvc-course
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:33306/courseDB
+    url: jdbc:mysql://localhost:33306/courseDB?createDatabaseIfNotExist=true
     username: root
     password: 123456
   jpa:
