@@ -1,5 +1,5 @@
-pring:
+spring:
   appliaction:
     name: msvc-eureka
-  config: # configuracion provicional
+  config:
     import: optional:configserver:http://localhost:8888
